@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Orderdetails | DAILY NEED SHOPING</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+
+
+        <header id="header"><!--header-->
+        <div class="header_top"><!--header_top-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 ">
+                        <div class="contactinfo">
+                            <ul class="nav nav-pills">
+                                <li><a href=""><i class="fa fa-phone"></i> 8309402151</a></li>
+                                <li><a href=""><i class="fa fa-envelope"></i> messi.biswa@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="social-icons pull-right">
+                            <ul class="nav navbar-nav">
+                                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                                
+                                <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header_top-->
+        
+        <div class="header-middle"><!--header-middle-->
+            <div class="container">
+      <div class="row">
+      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+          
+
+        <A href="edit.html" >Logout</A>
+       <br>
+
+      </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+   
+   
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{user}}</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
+                
+                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>DEPARTMENT:</dt>
+                    <dd>Administrator</dd>
+                    <dt>HIRE DATE</dt>
+                    <dd>11/12/2013</dd>
+                    <dt>DATE OF BIRTH</dt>
+                       <dd>11/12/2013</dd>
+                    <dt>GENDER</dt>
+                    <dd>Male</dd>
+                  </dl>
+                </div>-->
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      
+                   
+                         
+                        <tr>
+                        <td>Address</td>
+                        <td><textarea ng-model="profile[0].address" name="text" cols="25" rows="5"></textarea></td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td><input ng-model="profile[0].email"></td>
+                      </tr>
+                        <td>Phone Number</td>
+                        <td><input ng-model="profile[0].phone">
+                        </td>
+                           
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  
+                  <a ng-click="save(profile)" class="btn btn-primary">Save</a>
+                  <a ng-click="gotoprofile()" class="btn btn-primary">Cancel</a>
+                </div>
+              </div>
+            </div>
+                 <div class="panel-footer">
+                        
+                        
+                    </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

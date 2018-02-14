@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Cart | Daily Needs</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+	<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href=""><i class="fa fa-phone"></i>8309402151</a></li>
+								<li><a href=""><i class="fa fa-envelope"></i> messi.biswa@gmail.com.com</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href=""><i class="fa fa-facebook"></i></a></li>
+								<li><a href=""><i class="fa fa-twitter"></i></a></li>
+								<li><a href=""><i class="fa fa-linkedin"></i></a></li>
+				
+								<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
+		
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+						</div>
+						<div class="btn-group pull-right">
+							
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								
+							
+								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i>Welcome {{user}}</a></li>
+								<li><a href="cart.html" class="active"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a ng-click="logout()" ><i class="fa fa-lock"></i> Logout</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="index.html">Home</a></li>
+								<li class="dropdown"><a ng-click="gotoshop()">Shop</a>
+                                    
+                                </li> 
+								
+								<li><a href="contact-us.html">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					
+					</div>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+
+	<section id="cart_items">
+		<div class="container">
+			
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="image">Item</td>
+							<td class="description"></td>
+							<td class="price">Price</td>
+							<td class="quantity">Quantity</td>
+							<td class="total">Total</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat = "product in cartproducts">
+							
+							<td class="image">
+								<h4><a href="">{{product.name}}</a></h4>
+								
+							</td>
+							<td class="cart_description">
+							</td>
+							<td class="cart_price">
+								<p>{{product.price}}</p>
+							</td>
+							<td class="cart_quantity">
+								<div class="cart_quantity_button">
+									<a class="cart_quantity_up" ng-click="plus(product._id,user)"> + </a>
+									<input class="cart_quantity_input" type="text" name="quantity" value="{{product.count}}" autocomplete="off" size="2">
+									<a class="cart_quantity_down" ng-click="minus(product._id,user)"> - </a>
+								</div>
+							</td>
+							<td class="cart_total">
+								<p class="cart_total_price">Rs.{{product.total}}</p>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" ng-click="removefromcart(product._id,user)"><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section> <!--/#cart_items-->
+
+	<section id="do_action">
+		<div class="container">
+			<div class="heading">
+				<h3>What would you like to do next?</h3>
+				
+			</div>
+			
+				<div class="col-sm-6">
+					<div class="total_area">
+						<ul>
+							<li>Cart Sub Total <span>Rs.{{total}}</span></li>
+							
+							<li>Shipping Cost <span>Free</span></li>
+							<li>Total <span>Rs.{{total}}</span></li>
+						</ul>
+							
+							<a class="btn btn-default check_out" ng-click="checkout()">Check Out</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--/#do_action-->
+
+	
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-widget">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Service</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Online Help</a></li>
+								<li><a href="">Contact Us</a></li>
+								<li><a href="">Order Status</a></li>
+								<li><a href="">Change Location</a></li>
+								<li><a href="">FAQ’s</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Quick Shop</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="">Groceries</a></li>
+								<li><a href="">Fruits</a></li>
+								<li><a href="">Households</a></li>
+								
+								
+							</ul>
+						</div>
+					</div>
+					
+					
+					
+					
+				</div>
+			</div>
+		</div>
+		
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
+					
+				</div>
+			</div>
+		</div>
+		
+	</footer><!--/Footer-->
+	
+
+
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Orderdetails | DAILY NEED SHOPING</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+
+
+		<header id="header"><!--header-->
+		<div class="header_top"><!--header_top-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 ">
+						<div class="contactinfo">
+							<ul class="nav nav-pills">
+								<li><a href=""><i class="fa fa-phone"></i> 8309402151</a></li>
+								<li><a href=""><i class="fa fa-envelope"></i> messi.biswa@gmail.com</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-icons pull-right">
+							<ul class="nav navbar-nav">
+								<li><a href=""><i class="fa fa-facebook"></i></a></li>
+								<li><a href=""><i class="fa fa-twitter"></i></a></li>
+								<li><a href=""><i class="fa fa-linkedin"></i></a></li>
+								
+								<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header_top-->
+		
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="logo pull-left">
+							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+						</div>
+						<div class="btn-group pull-right">
+							
+							
+							
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+								
+								<li><a><i class="fa fa-crosshairs"></i>Welcome {{user}}</a></li>
+								
+								
+								<li><a ng-click="logout()"><i class="fa fa-lock"></i> Logout</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			
+			<div class="container">
+				<h1>Order Details</h1>
+	
+				<table class="table">
+					<thead>
+					<tr>
+						<th>OrderID</th>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Quantity</th>
+						<th>Total</th>
+						<th>Address</th>
+						<th>Phone</th>
+						<th>Status</th>
+						<th></th>
+						<th></th>
+					</tr>					
+					</thead>
+					<tbody>
+						
+						<tr ng-repeat = "order in orders">
+							<td>{{order.orderid}}</td>
+							<td>{{order.name}}</td>
+							<td>{{order.price}}</td>
+							<td>{{order.count}}</td>
+							<td>{{order.total}}</td>
+							<td>{{order.address}}</td>
+							<td>{{order.phone}}</td>
+							<td>{{order.status}}</td>
+							<td><button ng-if="order.status=='active'" class="btn btn-default" ng-click="cancel(order._id)" ng-confirm-message="sure ?">Cancel</button></td>
+							<td><button ng-if="order.status=='Delivered'" class="btn btn-default" ng-click="return(order._id)">Return</button></td>
+						</tr>
+					</tbody>
+					</table>
+			<p class="footer-bottom" ng-click="gotoshop()"> Go back </p>
+			</div>
+	</header>
+		
+
+
+				
+	
+
+
+
+
+
+</div>
+</body>
+</html>
