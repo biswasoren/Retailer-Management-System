@@ -1,9 +1,3 @@
-/**
- * Created by RAJesh1 on 6/22/2016.
- */
-
-// OR commonjs style
-//var angularMaterialize = require('angular-materialize');
 
 angular.module('myModule', ['ui.router'])
 
